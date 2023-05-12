@@ -7,7 +7,7 @@ let resultsArray = [];
 let counter = 0;
 let seconds = 0;
 let tens = 0;
-let Interval;
+let interval;
 
 const images = ["sass", "git", "gulp", "css", "grunt"];
 const cards = [...images, ...images].sort(() => Math.random() - 0.5);
@@ -18,12 +18,12 @@ cards.forEach((item) => {
   card.dataset.view = "card";
 
   card.addEventListener("click", function () {
+    if (typeof interval !== "number") interval = setInterval(startTimer, 10);
+
     if (this.className != "flipped" && this.className != "correct") {
       this.className = "flipped";
       let result = this.dataset.item;
       resultsArray.push(result);
-      clearInterval(Interval);
-      Interval = setInterval(startTimer, 10);
     }
 
     if (resultsArray.length > 1) {
