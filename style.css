@@ -24,6 +24,7 @@ h3 {
   text-transform: uppercase;
 }
 
+/************ THIS STYLES IS NOT USED! */
 button {
   -moz-border-radius: 5px;
   -webkit-border-radius: 5px;
@@ -49,6 +50,7 @@ button:hover {
   border: solid 1px #fff;
   color: #82d2e5;
 }
+/************ THIS STYLES IS NOT USED! */
 
 /* COMPONETS STYLES */
 #seconds,
@@ -156,3 +158,5 @@ button:hover {
   background: url("./assets/css.png") left center no-repeat #fff;
   background-size: contain;
 }
+
+/* read => find ambiguouses => find deps => find refactor scopes => refactor | add new feature */
