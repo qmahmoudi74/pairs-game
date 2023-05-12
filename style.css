@@ -1,4 +1,6 @@
+/* GLOBAL STYLES */
 body {
+  /* this should be background color! */
   background: #82d2e5;
   font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue",
     Helvetica, Arial, "Lucida Grande", sans-serif;
@@ -22,11 +24,6 @@ h3 {
   text-transform: uppercase;
 }
 
-#seconds,
-#tens {
-  font-size: 2em;
-}
-
 button {
   -moz-border-radius: 5px;
   -webkit-border-radius: 5px;
@@ -43,6 +40,7 @@ button {
   margin: 10px;
   outline: none;
 }
+
 button:hover {
   -webkit-transition: all 0.5s ease-in-out;
   -moz-transition: all 0.5s ease-in-out;
@@ -52,10 +50,17 @@ button:hover {
   color: #82d2e5;
 }
 
+/* COMPONETS STYLES */
+#seconds,
+#tens {
+  font-size: 2em;
+}
+
 #container {
   width: 630px;
   margin: 10px auto;
 }
+
 #container:after {
   content: "";
   display: table;
@@ -98,6 +103,7 @@ button:hover {
   background-size: 64px 128px;
 }
 
+/* ACTION STYLES */
 .flipped {
   transition: 0.6s;
   transform-style: preserve-3d;
@@ -120,7 +126,7 @@ button:hover {
   transform: rotateY(0deg);
 }
 
-/* Icons */
+/* ICONS */
 .correct[data-item="sass"],
 .flipped[data-item="sass"] {
   background: url("./assets/sass.png") left center no-repeat #fff;
