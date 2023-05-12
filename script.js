@@ -12,13 +12,12 @@ let Interval;
 const images = ["sass", "git", "gulp", "css", "grunt"];
 const cards = [...images, ...images].sort(() => Math.random() - 0.5);
 
-for (let i = 0; i < cards.length; i++) {
-  card = document.createElement("div");
-  card.dataset.item = cards[i];
+cards.forEach((item) => {
+  const card = document.createElement("div");
+  card.dataset.item = item;
   card.dataset.view = "card";
-  myCards.appendChild(card);
 
-  card.onclick = function () {
+  card.addEventListener("click", function () {
     if (this.className != "flipped" && this.className != "correct") {
       this.className = "flipped";
       let result = this.dataset.item;
@@ -38,8 +37,10 @@ for (let i = 0; i < cards.length; i++) {
         resultsArray = [];
       }
     }
-  };
-}
+  });
+
+  myCards.appendChild(card);
+});
 
 let check = function (className) {
   let x = document.getElementsByClassName("flipped");
@@ -59,23 +60,15 @@ let win = function () {
 
 function startTimer() {
   tens++;
+  tensElement.innerHTML = tens < 10 ? "0" + tens : tens;
 
-  if (tens < 9) {
-    tensElement.innerHTML = "0" + tens;
-  }
+  if (tens <= 99) return;
 
-  if (tens > 9) {
-    tensElement.innerHTML = tens;
-  }
+  seconds++;
+  secondsElement.innerHTML = seconds < 10 ? "0" + seconds : seconds;
 
-  if (tens > 99) {
-    seconds++;
-    secondsElement.innerHTML = "0" + seconds;
-    tens = 0;
-    tensElement.innerHTML = "0" + 0;
-  }
-
-  if (seconds > 9) {
-    secondsElement.innerHTML = seconds;
-  }
+  tens = 0;
+  tensElement.innerHTML = "00";
 }
+
+// check - win - startTimer
